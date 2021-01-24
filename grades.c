@@ -249,7 +249,7 @@ static int print_grades(student_data *student_data, list *student_grades){
 	/* prints the student name and id */
 	int id=student_data-> id;
 	int num_of_course=student_data->num_of_course; 
-	printf("%d %s:", id,(student_data-> name));
+	printf("%s %d:",(student_data-> name), id);
 	struct node *curr_student_course=list_begin(student_grades);
 	/* finish print if there isn't any courses for that student */
 	if(!(num_of_course)){
@@ -267,7 +267,7 @@ static int print_grades(student_data *student_data, list *student_grades){
 		}
 		else{
 			int grade=(curr_course_data->grade);
-			printf("%s %d,", (curr_course_data->course_name), grade);
+			printf(" %s %d,", (curr_course_data->course_name), grade);
 			curr_student_course=list_next(curr_student_course);
 		}
 	}
@@ -277,7 +277,7 @@ static int print_grades(student_data *student_data, list *student_grades){
 	}
 	else{
 		int grade=(curr_course_data->grade);		
-		printf("%s %d\n", (curr_course_data->course_name), grade);
+		printf(" %s %d\n", (curr_course_data->course_name), grade);
 	}
 	return 0;
 }
